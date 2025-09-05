@@ -9,10 +9,8 @@ export default function Home() {
   const educationControls = useAnimation();
   const experienceControls = useAnimation();
 
-  const isEducationInView = useInView(EducationRef, { threshold: 0.3 });
-  const isExperienceInView = useInView(ExperienceRef, { threshold: 0.3 });
-
-  const controls = useAnimation();
+  const isEducationInView = useInView(EducationRef, { amount: 0.3 });
+  const isExperienceInView = useInView(ExperienceRef, { amount: 0.3 });
 
   useEffect(() => {
     if (isEducationInView) {
