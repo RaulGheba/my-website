@@ -18,13 +18,7 @@ const PROJECTS = [
     description:
       "A travel-tracking app that lets you mark cities you've visited on an interactive world map. Cities are saved locally so you can revisit your journey anytime.",
     tech: ["React", "Leaflet.js", "CSS Modules"],
-  },
-  {
-    title: "The Wild Oasis",
-    emoji: "🏕️",
-    description:
-      "A full-featured admin interface for managing cabin rentals. Authentication, dashboards, booking flows, and cabin CRUD — all powered by Supabase on the backend.",
-    tech: ["React", "Supabase", "Styled Components"],
+    url: "https://world-wise-c04wdlgum-rauls-projects-05248210.vercel.app/",
   },
 ];
 
@@ -90,7 +84,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-4"
           >
-            Front-End Developer
+            Front-End Developer · React &amp; React Native
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -105,21 +99,43 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-gray-300 text-lg mb-10 leading-relaxed"
+            className="text-gray-300 text-lg mb-6 leading-relaxed"
           >
-            Building clean, responsive, and functional web and native
-            applications — with care for the details.
+            I build polished, production-ready interfaces with React and React
+            Native — 1.5 years of real-world shipping, not just side projects.
+            I care about clean code, fast UIs, and products that actually work.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex items-center justify-center gap-4"
+            transition={{ duration: 0.6, delay: 0.38 }}
+            className="flex flex-wrap items-center justify-center gap-2 mb-10"
           >
+            {["React", "React Native", "TypeScript", "Node.js", "REST APIs", "Git"].map((s) => (
+              <span
+                key={s}
+                className="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full"
+              >
+                {s}
+              </span>
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.52 }}
+            className="flex items-center justify-center gap-4 flex-wrap"
+          >
+            <a
+              href="#projects"
+              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm rounded-lg transition-colors duration-200 font-medium"
+            >
+              See My Work
+            </a>
             <a
               href="/CV (1).pdf.pdf"
               download
-              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm rounded-lg transition-colors duration-200 font-medium"
+              className="px-6 py-2.5 border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white text-sm rounded-lg transition-colors duration-200 font-medium"
             >
               Download Resume
             </a>
@@ -172,9 +188,10 @@ export default function Home() {
               — Bachelor&apos;s degree in Information Technology
             </p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Learned programming principles and fundamentals, practical skills,
-              and most importantly — problem solving and critical thinking under
-              pressure.
+              Built a strong foundation in software engineering — algorithms,
+              systems, and applied development. But most of what I know came
+              from building real things outside of class, driven by genuine
+              curiosity and the desire to ship something that works.
             </p>
             <div className="border-l-2 border-blue-500 pl-4">
               <p className="text-gray-400 italic text-sm leading-relaxed">
@@ -223,10 +240,11 @@ export default function Home() {
                 React Native · 1.5 years
               </p>
               <p className="text-gray-400 leading-relaxed text-sm">
-                Building production-ready mobile apps, integrating APIs, and
-                collaborating with experienced engineers. Worked on an app that
-                connects struggling students with peer mentors — helping
-                facilitate learning and personal growth.
+                Shipped production React Native features used by real users —
+                building screens, wiring REST APIs, handling state, and
+                iterating fast with a senior engineering team. Worked on a
+                mentorship platform that pairs struggling students with peers,
+                translating product requirements directly into working mobile UI.
               </p>
             </motion.div>
 
@@ -323,9 +341,21 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-[#111827] border border-gray-800 rounded-2xl p-6 hover:border-blue-500/50 transition-colors duration-300 flex flex-col gap-4"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{project.emoji}</span>
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{project.emoji}</span>
+                    <h3 className="text-lg font-semibold">{project.title}</h3>
+                  </div>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium shrink-0"
+                    >
+                      Live Demo →
+                    </a>
+                  )}
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed flex-1">
                   {project.description}
