@@ -37,15 +37,27 @@ const fadeUp = {
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      const el = document.documentElement;
+      setScrollProgress((el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <main className="min-h-screen bg-[#0d1117] text-white font-[Poppins]">
+      {/* SCROLL PROGRESS */}
+      <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
+        <div
+          className="h-full bg-blue-500 transition-all duration-75 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
       {/* NAVBAR */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
