@@ -89,7 +89,7 @@ export default function Home() {
         className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-6"
         style={{ backgroundImage: "url('/hero.png')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-[#0d1117]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/88 via-black/80 to-[#0d1117]" />
         <div className="relative z-10 text-center max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-5xl font-bold mb-6 leading-tight"
+            className="text-5xl font-bold mb-6 leading-tight drop-shadow-lg"
           >
             Hi, I&apos;m{" "}
             <span className="text-blue-400">Raul Gheba</span>
@@ -112,7 +112,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-gray-300 text-lg mb-6 leading-relaxed"
+            className="text-gray-300 text-lg mb-6 leading-relaxed drop-shadow-md"
           >
             I build polished, production-ready interfaces with React and React
             Native — 1.5 years of real-world shipping, not just side projects.
