@@ -177,11 +177,11 @@ export default function Home() {
             {[
               {
                 label: "Frontend",
-                items: ["JavaScript", "React", "React Native", "Redux", "Next.js"],
+                items: ["JavaScript", "React", "React Native", "Redux", "Next.js", "Tailwind CSS"],
               },
               {
                 label: "Backend & APIs",
-                items: ["Node.js", "Express.js", "REST APIs"],
+                items: ["Node.js", "Express.js", "REST APIs", "MongoDB"],
               },
               {
                 label: "Tooling & Cloud",
