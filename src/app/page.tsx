@@ -112,7 +112,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.38 }}
             className="flex flex-wrap items-center justify-center gap-2 mb-10"
           >
-            {["React", "React Native", "TypeScript", "Node.js", "REST APIs", "Git"].map((s) => (
+            {["React", "React Native", "TypeScript", "Node.js", "REST APIs"].map((s) => (
               <span
                 key={s}
                 className="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full"
@@ -185,7 +185,7 @@ export default function Home() {
               },
               {
                 label: "Tooling & Cloud",
-                items: ["Git", "AWS"],
+                items: ["AWS"],
               },
             ].map((group) => (
               <div
