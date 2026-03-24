@@ -23,6 +23,7 @@ const PROJECTS = [
 ];
 
 const NAV_LINKS = [
+  { label: "Stack", href: "#stack" },
   { label: "Education", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
@@ -147,6 +148,65 @@ export default function Home() {
             >
               GitHub
             </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* STACK */}
+      <section id="stack" className="py-16 px-6 border-y border-gray-800/60 bg-[#0d1117]">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-center mb-10"
+          >
+            <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-3">
+              Tech Stack
+            </p>
+            <h2 className="text-3xl font-bold">What I Work With</h2>
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+          >
+            {[
+              {
+                label: "Frontend",
+                items: ["JavaScript", "React", "React Native", "Redux", "Next.js"],
+              },
+              {
+                label: "Backend & APIs",
+                items: ["Node.js", "Express.js", "REST APIs"],
+              },
+              {
+                label: "Tooling & Cloud",
+                items: ["Git", "AWS"],
+              },
+            ].map((group) => (
+              <div
+                key={group.label}
+                className="bg-[#111827] border border-gray-800 rounded-2xl p-6"
+              >
+                <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-4">
+                  {group.label}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 text-sm rounded-full"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
